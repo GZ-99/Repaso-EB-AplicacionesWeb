@@ -1,0 +1,6 @@
+@LetPot.Platform.u202416903_HostAddress = http://localhost:5269
+
+GET {{LetPot.Platform.u202416903_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
