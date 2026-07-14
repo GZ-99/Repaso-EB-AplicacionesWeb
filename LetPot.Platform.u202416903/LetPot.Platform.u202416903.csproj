@@ -37,8 +37,11 @@
       <Folder Include="Allocation\Application\CommandServices\" />
       <Folder Include="Allocation\Application\Internal\CommandServices\" />
       <Folder Include="Allocation\Application\Internal\EventHandlers\" />
-      <Folder Include="Allocation\Application\Internal\QueryServices\" />
-      <Folder Include="Allocation\Application\QueryServices\" />
+      <Folder Include="Allocation\Domain\Model\Commands\" />
+      <Folder Include="Allocation\Domain\Model\Entities\" />
+      <Folder Include="Allocation\Domain\Model\Errors\" />
+      <Folder Include="Allocation\Domain\Model\Events\" />
+      <Folder Include="Allocation\Domain\Model\ValueObjects\" />
       <Folder Include="Allocation\Interfaces\Acl\" />
       <Folder Include="Allocation\Interfaces\Rest\Resources\" />
       <Folder Include="Allocation\Interfaces\Rest\Transform\" />
