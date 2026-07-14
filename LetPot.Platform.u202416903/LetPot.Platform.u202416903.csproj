@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9"/>
         <!-- EntityFrameworkCore Database Persistence related packages -->
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.8"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.8"/>
@@ -29,6 +30,19 @@
         <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.18.0"/>
         <!-- Mediator pattern related packages -->
         <PackageReference Include="Cortex.Mediator" Version="3.1.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Allocation\Application\Acl\" />
+      <Folder Include="Allocation\Application\CommandServices\" />
+      <Folder Include="Allocation\Application\Internal\CommandServices\" />
+      <Folder Include="Allocation\Application\Internal\EventHandlers\" />
+      <Folder Include="Allocation\Application\Internal\QueryServices\" />
+      <Folder Include="Allocation\Application\QueryServices\" />
+      <Folder Include="Allocation\Interfaces\Acl\" />
+      <Folder Include="Allocation\Interfaces\Rest\Resources\" />
+      <Folder Include="Allocation\Interfaces\Rest\Transform\" />
+      <Folder Include="Allocation\Resources\" />
     </ItemGroup>
 
 </Project>
