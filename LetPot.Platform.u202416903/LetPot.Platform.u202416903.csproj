@@ -43,8 +43,6 @@
       <Folder Include="Allocation\Domain\Model\Events\" />
       <Folder Include="Allocation\Domain\Model\ValueObjects\" />
       <Folder Include="Allocation\Interfaces\Acl\" />
-      <Folder Include="Allocation\Interfaces\Rest\Resources\" />
-      <Folder Include="Allocation\Interfaces\Rest\Transform\" />
       <Folder Include="Allocation\Resources\" />
     </ItemGroup>
 

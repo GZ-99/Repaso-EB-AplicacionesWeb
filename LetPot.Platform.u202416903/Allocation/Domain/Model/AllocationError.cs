@@ -1,6 +1,6 @@
 namespace LetPot.Platform.u202416903.Allocation.Domain.Model;
 
-public enum PotError
+public enum AllocationError
 {
     None,
     PotNotFound,
