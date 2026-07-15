@@ -1,3 +1,4 @@
+using LetPot.Platform.u202416903.Allocation.Domain.Model.Commands;
 using LetPot.Platform.u202416903.Shared.Domain.Model.ValueObjects;
 
 namespace LetPot.Platform.u202416903.Allocation.Domain.Model.Aggregate;
@@ -16,6 +17,19 @@ public partial class Pot
         macAddress = new MacAddress(string.Empty);
         customerId = 0;
         preferredHumidityLevel = 0.0;
+    }
+    
+    public Pot(SeedPotsCommand command)
+    {
+        ArgumentNullException.ThrowIfNull(command);
+    }
+    
+    public Pot(UpdatePotCommand command)
+    {
+        ArgumentNullException.ThrowIfNull(command);
+        macAddress = command.macAddress;
+        customerId = command.customerId;
+        preferredHumidityLevel = command.preferredHumidityLevel;
     }
     
     public int Id { get; }
