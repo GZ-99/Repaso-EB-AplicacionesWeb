@@ -1,3 +1,4 @@
+using LetPot.Platform.u202416903.Allocation.Infrastructure.Persistence.EntityFrameworkCore.Configuration.Extensions;
 using LetPot.Platform.u202416903.Shared.Infrastructure.Persistence.EntityFrameworkCore.Interceptors;
 using LetPot.Platform.u202416903.Shared.Infrastructure.Persistence.EntityFrameworkCore.Configuration.Extensions;
 using Microsoft.EntityFrameworkCore;
@@ -32,9 +33,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-
-        // Publishing Context
-        //builder.ApplyPublishingConfiguration();
+        builder.ApplyAllocationConfiguration();
 
         // General Naming Convention for the database objects
         builder.UseSnakeCaseNamingConvention();

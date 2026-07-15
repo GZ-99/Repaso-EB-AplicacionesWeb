@@ -5,7 +5,7 @@ namespace LetPot.Platform.u202416903.Allocation.Infrastructure.Persistence.Entit
 
 public static class ModelBuilderExtensions
 {
-    public static void ApplyPotConfiguration(this ModelBuilder builder)
+    public static void ApplyAllocationConfiguration(this ModelBuilder builder)
     {
         builder.Entity<Pot>().HasKey(t => t.Id);
         builder.Entity<Pot>().Property(t => t.Id).IsRequired().ValueGeneratedOnAdd();
