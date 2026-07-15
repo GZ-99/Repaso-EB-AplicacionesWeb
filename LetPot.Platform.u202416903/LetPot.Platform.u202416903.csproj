@@ -39,6 +39,24 @@
       <Folder Include="Allocation\Domain\Model\ValueObjects\" />
       <Folder Include="Allocation\Interfaces\Acl\" />
       <Folder Include="Allocation\Resources\" />
+      <Folder Include="Telemetry\Application\Acl\" />
+      <Folder Include="Telemetry\Application\CommandServices\" />
+      <Folder Include="Telemetry\Application\Internal\CommandServices\" />
+      <Folder Include="Telemetry\Application\Internal\EventHandlers\" />
+      <Folder Include="Telemetry\Application\Internal\QueryServices\" />
+      <Folder Include="Telemetry\Application\QueryServices\" />
+      <Folder Include="Telemetry\Domain\Model\Commands\" />
+      <Folder Include="Telemetry\Domain\Model\Entities\" />
+      <Folder Include="Telemetry\Domain\Model\Errors\" />
+      <Folder Include="Telemetry\Domain\Model\Events\" />
+      <Folder Include="Telemetry\Domain\Model\Queries\" />
+      <Folder Include="Telemetry\Domain\Repositories\" />
+      <Folder Include="Telemetry\Infrastructure\Persistence\EntityFrameworkCore\Configuration\Extensions\" />
+      <Folder Include="Telemetry\Infrastructure\Persistence\EntityFrameworkCore\Repositories\" />
+      <Folder Include="Telemetry\Interfaces\Acl\" />
+      <Folder Include="Telemetry\Interfaces\Rest\Resources\" />
+      <Folder Include="Telemetry\Interfaces\Rest\Transform\" />
+      <Folder Include="Telemetry\Resources\" />
     </ItemGroup>
 
 </Project>

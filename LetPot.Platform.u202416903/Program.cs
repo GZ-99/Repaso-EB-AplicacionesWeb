@@ -1,9 +1,14 @@
 using Cortex.Mediator.Commands;
 using Cortex.Mediator.DependencyInjection;
+using LetPot.Platform.u202416903.Allocation.Application.CommandServices;
+using LetPot.Platform.u202416903.Allocation.Application.Internal.CommandServices;
+using LetPot.Platform.u202416903.Allocation.Application.Internal.EventHandlers;
+using LetPot.Platform.u202416903.Allocation.Domain.Model.Events;
 using LetPot.Platform.u202416903.Allocation.Application.Internal.QueryServices;
 using LetPot.Platform.u202416903.Allocation.Application.QueryServices;
 using LetPot.Platform.u202416903.Allocation.Domain.Repositories;
 using LetPot.Platform.u202416903.Allocation.Infrastructure.Persistence.EntityFrameworkCore.Repositories;
+using LetPot.Platform.u202416903.Shared.Domain.Model.Events;
 using LetPot.Platform.u202416903.Shared.Domain.Repositories;
 using LetPot.Platform.u202416903.Shared.Infrastructure.Interfaces.AspNetCore.Configuration;
 using LetPot.Platform.u202416903.Shared.Infrastructure.Mediator.Cortex.Configuration;
@@ -115,6 +120,8 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 // Allocation Bounded Context
 builder.Services.AddScoped<IPotRepository, PotRepository>(); //Esto es nuevo
 builder.Services.AddScoped<IPotQueryService, PotQueryService>(); //Esto es nuevo
+builder.Services.AddScoped<IPotCommandService, PotCommandService>(); //Esto es nuevo
+builder.Services.AddScoped<ApplicationReadyEventHandler>(); //Esto es nuevo
 
 // TokenSettings Configuration
 
@@ -137,6 +144,9 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<AppDbContext>();
     context.Database.Migrate();
+
+    var eventHandler = services.GetRequiredService<ApplicationReadyEventHandler>(); //Esto es nuevo
+    await eventHandler.Handle(new ApplicationReadyEvent(), CancellationToken.None); //Esto es nuevo
 }
 
 // Configure the HTTP request pipeline.
