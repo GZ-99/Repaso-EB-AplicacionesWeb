@@ -34,10 +34,8 @@
 
     <ItemGroup>
       <Folder Include="Allocation\Application\Acl\" />
-      <Folder Include="Allocation\Application\Internal\EventHandlers\" />
       <Folder Include="Allocation\Domain\Model\Entities\" />
       <Folder Include="Allocation\Domain\Model\Errors\" />
-      <Folder Include="Allocation\Domain\Model\Events\" />
       <Folder Include="Allocation\Domain\Model\ValueObjects\" />
       <Folder Include="Allocation\Interfaces\Acl\" />
       <Folder Include="Allocation\Resources\" />
