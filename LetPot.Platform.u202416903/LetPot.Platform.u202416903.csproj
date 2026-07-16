@@ -46,8 +46,6 @@
       <Folder Include="Telemetry\Application\Internal\QueryServices\" />
       <Folder Include="Telemetry\Application\QueryServices\" />
       <Folder Include="Telemetry\Domain\Model\Entities\" />
-      <Folder Include="Telemetry\Infrastructure\Persistence\EntityFrameworkCore\Configuration\Extensions\" />
-      <Folder Include="Telemetry\Infrastructure\Persistence\EntityFrameworkCore\Repositories\" />
       <Folder Include="Telemetry\Interfaces\Acl\" />
       <Folder Include="Telemetry\Interfaces\Rest\Resources\" />
       <Folder Include="Telemetry\Interfaces\Rest\Transform\" />
