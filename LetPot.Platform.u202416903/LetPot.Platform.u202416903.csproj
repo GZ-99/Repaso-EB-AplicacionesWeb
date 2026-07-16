@@ -41,7 +41,6 @@
       <Folder Include="Allocation\Resources\" />
       <Folder Include="Telemetry\Application\Acl\" />
       <Folder Include="Telemetry\Application\Internal\EventHandlers\" />
-      <Folder Include="Telemetry\Application\Internal\QueryServices\" />
       <Folder Include="Telemetry\Domain\Model\Entities\" />
       <Folder Include="Telemetry\Interfaces\Acl\" />
       <Folder Include="Telemetry\Interfaces\Rest\Resources\" />
