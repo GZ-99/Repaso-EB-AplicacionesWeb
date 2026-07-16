@@ -1,4 +1,5 @@
 ﻿using LetPot.Platform.u202416903.Shared.Domain.Model.ValueObjects;
+using LetPot.Platform.u202416903.Telemetry.Domain.Model.Commands;
 using LetPot.Platform.u202416903.Telemetry.Domain.Model.ValueObjects;
 
 namespace LetPot.Platform.u202416903.Telemetry.Domain.Model.Aggregate;
@@ -24,6 +25,16 @@ public partial class DataRecord
         currentHumidityLevel = 0.0;
         operationPhase = EOperationPhase.WAITING;
         emittedAt = DateTime.UtcNow;
+    }
+
+    public DataRecord(CreateDataRecordCommand command)
+    {
+        potMacAddress = new MacAddress(command.potMacAddress);
+        operationMode = Enum.Parse<EOperationMode>(command.operationMode);
+        targetHumidityLevel = command.targetHumidityLevel;
+        currentHumidityLevel = command.currentHumidityLevel;
+        operationPhase = Enum.Parse<EOperationPhase>(command.operationPhase);
+        emittedAt = command.emittedAt;
     }
     
     public int Id { get; }
