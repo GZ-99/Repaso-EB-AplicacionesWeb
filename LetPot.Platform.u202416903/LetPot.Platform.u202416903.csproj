@@ -40,8 +40,6 @@
       <Folder Include="Allocation\Interfaces\Acl\" />
       <Folder Include="Allocation\Resources\" />
       <Folder Include="Telemetry\Domain\Model\Entities\" />
-      <Folder Include="Telemetry\Interfaces\Rest\Resources\" />
-      <Folder Include="Telemetry\Interfaces\Rest\Transform\" />
       <Folder Include="Telemetry\Resources\" />
       <Folder Include="Telemetry\Domain\Model\Entities\" />
       <Folder Include="Telemetry\Interfaces\Rest\Resources\" />
