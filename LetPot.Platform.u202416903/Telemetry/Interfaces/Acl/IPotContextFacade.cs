@@ -2,13 +2,5 @@
 
 public interface IPotContextFacade
 {
-    /*Task<int> CreatePot(
-        string macAddress,
-        int customerId,
-        double preferredHumidityLevel,
-        CancellationToken cancellationToken
-    );*/
-    
-    Task<int> FetchPotById(string macAddress, 
-        CancellationToken cancellationToken);
+    Task<bool> ExistsByMacAddressAsync(string macAddress, CancellationToken cancellationToken);
 }
