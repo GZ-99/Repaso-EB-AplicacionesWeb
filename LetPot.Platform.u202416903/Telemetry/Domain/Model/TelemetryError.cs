@@ -4,6 +4,7 @@ public enum TelemetryError
 {
     None,
     DataRecordNotFound,
+    PotNotFound,
     DuplicatePotMacAddressTitle,
     OperationCancelled,
     DatabaseError,

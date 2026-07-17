@@ -6,4 +6,6 @@ namespace LetPot.Platform.u202416903.Allocation.Domain.Repositories;
 public interface IPotRepository : IBaseRepository<Pot>
 {
     Task<bool> ExistsByMacAddressAsync(string macAddress, CancellationToken cancellationToken);
+    
+    Task<Pot?> FindByMacAddressAsync(string macAddress, CancellationToken cancellationToken);
 }

@@ -6,6 +6,7 @@ using LetPot.Platform.u202416903.Telemetry.Domain.Model;
 using LetPot.Platform.u202416903.Telemetry.Domain.Model.Aggregate;
 using LetPot.Platform.u202416903.Telemetry.Domain.Model.Commands;
 using LetPot.Platform.u202416903.Telemetry.Domain.Repositories;
+using LetPot.Platform.u202416903.Telemetry.Interfaces.Acl;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 
@@ -13,6 +14,7 @@ namespace LetPot.Platform.u202416903.Telemetry.Application.Internal.CommandServi
 
 public class DataRecordCommandService(
     IDataRecordRepository dataRecordRepository,
+    IPotContextFacade potContextFacade,
     IUnitOfWork unitOfWork,
     IStringLocalizer<ErrorMessages> localizer
     ) : IDataRecordCommandService
@@ -21,6 +23,16 @@ public class DataRecordCommandService(
     
     public async Task<Result<DataRecord>> Handle(CreateDataRecordCommand command, CancellationToken cancellationToken)
     {
+        var exists = await potContextFacade.ExistsByMacAddressAsync(command.potMacAddress,
+            cancellationToken);
+
+        if (!exists)
+        {
+            return Result<DataRecord>.Failure(
+                TelemetryError.PotNotFound,
+                _localizer[nameof(TelemetryError.PotNotFound)]);
+        }
+        
         var dataRecord = new DataRecord(command);
         try
         {

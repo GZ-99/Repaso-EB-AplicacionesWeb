@@ -32,6 +32,11 @@ public partial class Pot
         preferredHumidityLevel = command.preferredHumidityLevel;
     }
     
+    public void UpdatePreferredHumidityLevel(double preferredHumidityLevel)
+    {
+        this.preferredHumidityLevel = preferredHumidityLevel;
+    }
+    
     public int Id { get; }
     
     public MacAddress macAddress { get; set; }

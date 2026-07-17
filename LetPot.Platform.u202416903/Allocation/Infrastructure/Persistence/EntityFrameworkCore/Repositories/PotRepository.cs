@@ -13,4 +13,11 @@ public class PotRepository(AppDbContext context) : BaseRepository<Pot>(context),
     {
         return await Context.Set<Pot>().AnyAsync(pot => pot.macAddress == new MacAddress(macAddress), cancellationToken);
     }
+    
+    public async Task<Pot?> FindByMacAddressAsync(string macAddress, CancellationToken cancellationToken)
+    {
+        return await Context.Set<Pot>()
+            .FirstOrDefaultAsync(
+                pot => pot.macAddress == new MacAddress(macAddress), cancellationToken);
+    }
 }
