@@ -42,8 +42,6 @@
       <Folder Include="Telemetry\Domain\Model\Entities\" />
       <Folder Include="Telemetry\Resources\" />
       <Folder Include="Telemetry\Domain\Model\Entities\" />
-      <Folder Include="Telemetry\Interfaces\Rest\Resources\" />
-      <Folder Include="Telemetry\Interfaces\Rest\Transform\" />
       <Folder Include="Telemetry\Resources\" />
     </ItemGroup>
 

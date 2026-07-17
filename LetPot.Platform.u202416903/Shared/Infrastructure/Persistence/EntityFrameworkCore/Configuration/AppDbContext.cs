@@ -1,6 +1,7 @@
 using LetPot.Platform.u202416903.Allocation.Infrastructure.Persistence.EntityFrameworkCore.Configuration.Extensions;
 using LetPot.Platform.u202416903.Shared.Infrastructure.Persistence.EntityFrameworkCore.Interceptors;
 using LetPot.Platform.u202416903.Shared.Infrastructure.Persistence.EntityFrameworkCore.Configuration.Extensions;
+using LetPot.Platform.u202416903.Telemetry.Infrastructure.Persistence.EntityFrameworkCore.Configuration.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace LetPot.Platform.u202416903.Shared.Infrastructure.Persistence.EntityFrameworkCore.Configuration;
@@ -34,6 +35,9 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
     {
         base.OnModelCreating(builder);
         builder.ApplyAllocationConfiguration();
+        
+        base.OnModelCreating(builder);
+        builder.ApplyTelemetryConfiguration();
 
         // General Naming Convention for the database objects
         builder.UseSnakeCaseNamingConvention();

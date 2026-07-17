@@ -1,5 +1,4 @@
-﻿using Cortex.Mediator;
-using LetPot.Platform.u202416903.Shared.Application.Model;
+﻿using LetPot.Platform.u202416903.Shared.Application.Model;
 using LetPot.Platform.u202416903.Shared.Domain.Repositories;
 using LetPot.Platform.u202416903.Shared.Resources.Errors;
 using LetPot.Platform.u202416903.Telemetry.Application.CommandServices;
@@ -41,9 +40,9 @@ public class DataRecordCommandService(
             await dataRecordRepository.AddAsync(dataRecord, cancellationToken);
             await unitOfWork.CompleteAsync(cancellationToken);
             
-            var domainEvent = new DataRecordRegisteredEvent(
+            /*var domainEvent = new DataRecordRegisteredEvent(
                 dataRecord.potMacAddress,
-                dataRecord.targetHumidityLevel);
+                dataRecord.targetHumidityLevel);*/
             
             return Result<DataRecord>.Success(dataRecord);
         }

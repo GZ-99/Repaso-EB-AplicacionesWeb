@@ -24,28 +24,6 @@ public class PotsController(
     private readonly IStringLocalizer<ErrorMessages> _errorLocalizer = errorLocalizer;
     private readonly ProblemDetailsFactory _problemDetailsFactory = problemDetailsFactory;
     
-    /*[HttpGet("{potId:int}")]
-    [AllowAnonymous]
-    [SwaggerOperation(
-        Summary = "Get a pot by its id",
-        Description = "Get a pot by its id",
-        OperationId = "GetPotById")]
-    [SwaggerResponse(StatusCodes.Status200OK, "The pot was found", typeof(PotResource))]
-    [SwaggerResponse(StatusCodes.Status404NotFound, "The pot was not found")]
-    public async Task<IActionResult> GetPotById([FromRoute] int potId, CancellationToken cancellationToken)
-    {
-        var getPotByIdQuery = new GetPotByIdQuery(potId);
-        var pot = await potQueryService.Handle(getPotByIdQuery, cancellationToken);
-
-        return AllocationActionResultAssembler.ToActionResultFromGetPotByIdResult(
-            this,
-            pot,
-            _errorLocalizer,
-            _problemDetailsFactory,
-            foundExpedition => Ok(PotResourceFromEntityAssembler.ToResourceFromEntity(foundExpedition))
-        );
-    }*/
-    
     [HttpGet]
     [SwaggerOperation(
         Summary = "Get all pots",

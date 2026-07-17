@@ -8,8 +8,6 @@ using LetPot.Platform.u202416903.Allocation.Application.Internal.QueryServices;
 using LetPot.Platform.u202416903.Allocation.Application.QueryServices;
 using LetPot.Platform.u202416903.Allocation.Domain.Repositories;
 using LetPot.Platform.u202416903.Allocation.Infrastructure.Persistence.EntityFrameworkCore.Repositories;
-using LetPot.Platform.u202416903.Shared.Application.Internal.EventHandlers;
-using LetPot.Platform.u202416903.Shared.Domain.Model.Events;
 using LetPot.Platform.u202416903.Shared.Domain.Repositories;
 using LetPot.Platform.u202416903.Shared.Infrastructure.Interfaces.AspNetCore.Configuration;
 using LetPot.Platform.u202416903.Shared.Infrastructure.Mediator.Cortex.Configuration;
@@ -19,6 +17,15 @@ using LetPot.Platform.u202416903.Shared.Infrastructure.Pipeline.Middleware.Exten
 using LetPot.Platform.u202416903.Shared.Interfaces.Rest.ProblemDetails;
 using LetPot.Platform.u202416903.Shared.Resources.CommonMessages;
 using LetPot.Platform.u202416903.Shared.Resources.Errors;
+using LetPot.Platform.u202416903.Telemetry.Application.Acl;
+using LetPot.Platform.u202416903.Telemetry.Application.CommandServices;
+using LetPot.Platform.u202416903.Telemetry.Application.Internal.CommandServices;
+using LetPot.Platform.u202416903.Telemetry.Application.Internal.EventHandlers;
+using LetPot.Platform.u202416903.Telemetry.Application.Internal.QueryServices;
+using LetPot.Platform.u202416903.Telemetry.Application.QueryServices;
+using LetPot.Platform.u202416903.Telemetry.Domain.Repositories;
+using LetPot.Platform.u202416903.Telemetry.Infrastructure.Persistence.EntityFrameworkCore.Repositories;
+using LetPot.Platform.u202416903.Telemetry.Interfaces.Acl;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using Microsoft.OpenApi;
@@ -123,6 +130,15 @@ builder.Services.AddScoped<IPotRepository, PotRepository>(); //Esto es nuevo
 builder.Services.AddScoped<IPotQueryService, PotQueryService>(); //Esto es nuevo
 builder.Services.AddScoped<IPotCommandService, PotCommandService>(); //Esto es nuevo
 builder.Services.AddScoped<ApplicationReadyEventHandler>(); //Esto es nuevo
+
+// ACL
+builder.Services.AddScoped<IPotContextFacade, PotContextFacade>();
+
+// Telemetry Bounded Context
+builder.Services.AddScoped<IDataRecordRepository, DataRecordRepository>(); //Esto es nuevo
+builder.Services.AddScoped<IDataRecordQueryService, DataRecordQueryService>(); //Esto es nuevo
+builder.Services.AddScoped<IDataRecordCommandService, DataRecordCommandService>(); //Esto es nuevo
+builder.Services.AddScoped<DataRecordRegisteredEventHandler>(); //Esto es nuevo
 
 // TokenSettings Configuration
 
