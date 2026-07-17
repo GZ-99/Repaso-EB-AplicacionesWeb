@@ -44,7 +44,8 @@ public class DataRecordsController(
                         result,
                         _errorLocalizer,
                         _problemDetailsFactory,
-                        createdDataRecord => CreatedAtAction(nameof(GetDataRecordByIdQuery), new { dataRecordId = createdDataRecord.Id },
+                        createdDataRecord => StatusCode(
+                                StatusCodes.Status201Created,
                                 DataRecordResourceFromEntityAssembler.ToResourceFromEntity(createdDataRecord))
                 );
         }

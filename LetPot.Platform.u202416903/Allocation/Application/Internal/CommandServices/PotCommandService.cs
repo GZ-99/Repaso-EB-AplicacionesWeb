@@ -67,7 +67,13 @@ public class PotCommandService(
             };
             foreach (var pot in seedPots)
             {
-                await potRepository.AddAsync(pot, cancellationToken);
+                var exists = await potRepository.ExistsByMacAddressAsync(
+                    pot.macAddress.value,
+                    cancellationToken
+                );
+                
+                if (!exists)
+                    await potRepository.AddAsync(pot, cancellationToken);
             }
             await unitOfWork.CompleteAsync(cancellationToken);
             return Result<Pot>.Success(seedPots.First());

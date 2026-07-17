@@ -40,9 +40,8 @@ public class DataRecordCommandService(
             await dataRecordRepository.AddAsync(dataRecord, cancellationToken);
             await unitOfWork.CompleteAsync(cancellationToken);
             
-            /*var domainEvent = new DataRecordRegisteredEvent(
-                dataRecord.potMacAddress,
-                dataRecord.targetHumidityLevel);*/
+            await potContextFacade.UpdatePreferredHumidityLevelAsync(command.potMacAddress,
+                command.targetHumidityLevel, cancellationToken);
             
             return Result<DataRecord>.Success(dataRecord);
         }

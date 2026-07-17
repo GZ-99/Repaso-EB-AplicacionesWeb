@@ -3,4 +3,10 @@
 public interface IPotContextFacade
 {
     Task<bool> ExistsByMacAddressAsync(string macAddress, CancellationToken cancellationToken);
+
+    Task UpdatePreferredHumidityLevelAsync(
+        string macAddress,
+        double  preferredHumidityLevel,
+        CancellationToken cancellationToken
+        );
 }
