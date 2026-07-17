@@ -8,6 +8,7 @@ using LetPot.Platform.u202416903.Allocation.Application.Internal.QueryServices;
 using LetPot.Platform.u202416903.Allocation.Application.QueryServices;
 using LetPot.Platform.u202416903.Allocation.Domain.Repositories;
 using LetPot.Platform.u202416903.Allocation.Infrastructure.Persistence.EntityFrameworkCore.Repositories;
+using LetPot.Platform.u202416903.Shared.Application.Internal.EventHandlers;
 using LetPot.Platform.u202416903.Shared.Domain.Model.Events;
 using LetPot.Platform.u202416903.Shared.Domain.Repositories;
 using LetPot.Platform.u202416903.Shared.Infrastructure.Interfaces.AspNetCore.Configuration;

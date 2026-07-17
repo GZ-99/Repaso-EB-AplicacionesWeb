@@ -9,10 +9,10 @@ public class ApplicationReadyEventHandler(IPotCommandService potCommandService) 
 {
     public Task Handle(ApplicationReadyEvent domainEvent, CancellationToken cancellationToken)
     {
-        return On(domainEvent, cancellationToken);
+        return On(cancellationToken);
     }
     
-    private async Task On(ApplicationReadyEvent domainEvent, CancellationToken  cancellationToken)
+    private async Task On(CancellationToken cancellationToken)
     {
         var seedCommand = new SeedPotsCommand();
         await potCommandService.Handle(seedCommand, cancellationToken);

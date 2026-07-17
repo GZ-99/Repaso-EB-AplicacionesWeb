@@ -24,7 +24,7 @@ public class PotsController(
     private readonly IStringLocalizer<ErrorMessages> _errorLocalizer = errorLocalizer;
     private readonly ProblemDetailsFactory _problemDetailsFactory = problemDetailsFactory;
     
-    [HttpGet("{potId:int}")]
+    /*[HttpGet("{potId:int}")]
     [AllowAnonymous]
     [SwaggerOperation(
         Summary = "Get a pot by its id",
@@ -44,7 +44,7 @@ public class PotsController(
             _problemDetailsFactory,
             foundExpedition => Ok(PotResourceFromEntityAssembler.ToResourceFromEntity(foundExpedition))
         );
-    }
+    }*/
     
     [HttpGet]
     [SwaggerOperation(
